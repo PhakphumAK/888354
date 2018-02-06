@@ -1,0 +1,37 @@
+<html>
+<head><meta charset="utf-8"></head>
+<script>
+    function myString() { 
+	var s1,s2, arr_string, sel, count=0;
+        s1 = document.getElementById("s1").value;
+        s2 = document.getElementById("s2").value;
+		sel = document.querySelector("input[name='radio']:checked").value;
+		arr_string = s1.split(" ");	
+        arr_string.forEach(key =>{
+			if(sel == "No"){
+				s2 = s2.toLowerCase();
+				key = key.toLowerCase();
+			}if(key.search(s2) > -1){
+				count++;
+			}
+		});
+		document.getElementById("demo").innerHTML = count;
+    }
+</script>
+<body>
+		<h2>Ex.2 - Search String Non Sensitive Case</h2>
+		<a>Text Input :</a>
+		<textarea id="s1"></textarea>
+			<br><br>
+		<a>Sensitive Case : </a>
+		<input type="radio" name="radio" value="Yes" checked><a>Yes</a>
+		<input type="radio" name="radio" value="No"><a>No</a>
+			<br><br>
+		<a>Search :</a>
+		<input type="s1" id="s2"/>
+			<br><br>
+		<button onclick='myString()'>search</button>
+			<br><br>
+        <p>Result for search : <a id="demo"></a></p>
+</body>
+</html>

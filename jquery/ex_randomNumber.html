@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+		h1{
+			text-align: center;
+		}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+		$(function(){
+			var num1 = 0;
+			var num2 = 0; 
+			var sum = 0;
+			var sum2 = 0;
+			$("#random").click(function(){
+			num1 = Math.floor(Math.random() * 999) + 1;
+			num2 = Math.floor(Math.random() * 999) + 1;
+			
+			$("#show").html(num1 + " + " + num2 + " = ");
+			sum = num1 + num2;
+			});
+			
+			$("#send").click(function(){
+				sum2 = $("#ans").val();
+				if(sum2 == sum){
+					$("#res").html("<span style='color:green;'>That's correct.</span>");
+				}else{
+					$("#res").html("<span style='color:red;'>That's Wrong. The answer is</span>");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+		<h1>Ex - Random Number for Answer</h1>
+		<hr><br>
+			<center>
+			<button type="button" id="random" >Random Number</button>
+			</center><br>
+		<div>
+			<center><span id="show"></span>
+			<input type="text" id="ans">
+			</center><br>
+		</div>
+		<div>
+			<center>
+			<button type="button" id="send">Send Answer</button>
+			</center><br>
+		</div>
+		<div>
+			<center>
+			<span>Result : </span>
+			<span id="res"></span>
+			</center>
+		</div>
+</body>
+</html>
